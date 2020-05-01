@@ -9,7 +9,7 @@ const App: React.FC = () => {
       <input />
       <Test name="Matt" nameType={NameType.FIRST} />
     </div>
-  );
+  )
 };
 
 export default App;

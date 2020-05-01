@@ -62,9 +62,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "pretest": "eslint --ignore-path .gitignore ./src/**/*.tsx",
+    "pretest": "eslint ./src/**/*.tsx",
     "test": "node scripts/test.js",
-    "lint-fix": "eslint --ignore-path .gitignore ./src/**/*.tsx --fix"
+    "lint-fix": "eslint ./src/**/*.tsx --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
