@@ -64,6 +64,7 @@
     "build": "node scripts/build.js",
     "pretest": "eslint ./src/**/*.tsx",
     "test": "node scripts/test.js",
+    "coverage": "npm t -- --watchAll=false --coverage",
     "lint-fix": "eslint ./src/**/*.tsx --fix"
   },
   "eslintConfig": {
@@ -86,8 +87,9 @@
       "<rootDir>/src"
     ],
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.d.ts"
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/index.tsx"
     ],
     "setupFiles": [
       "react-app-polyfill/jsdom"
@@ -152,7 +154,16 @@
           "resultDir": "build/reports",
           "reportTitle": "jest-stare-report"
         }
+      ],
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "build/reports"
+        }
       ]
+    ],
+    "coverageReporters": [
+      "lcov"
     ]
   },
   "babel": {
@@ -178,6 +189,7 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.19.0",
     "jest-html-reporter": "^3.1.0",
+    "jest-junit": "^10.0.0",
     "jest-sonar": "^0.2.7",
     "jest-stare": "^2.0.1",
     "prettier": "^2.0.5",
